@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天津优合网络科技有限公司 - 引领AI未来</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --bg-light: #ffffff;
+            --bg-gray: #f1f5f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            fill: var(--accent-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+        }
+
+        /* About Us */
+        .about {
+            background-color: var(--bg-light);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Solutions */
+        .solutions {
+            background-color: var(--bg-light);
+        }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .solution-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .solution-card-content {
+            padding: 1.5rem;
+        }
+        .solution-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* News */
+        .news {
+            background-color: var(--bg-gray);
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .news-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        .news-item .date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+        .news-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        .news-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Services */
+        .services {
+            background-color: var(--bg-gray);
+        }
+
+        /* Contact */
+        .contact {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .contact h2 {
+            color: var(--text-light);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                display: none; /* Simplified for this example */
+            }
+            
+            header {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <!-- Generated SVG Logo -->
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none" />
+                <path d="M30 50 L50 70 L70 30" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="50" r="10" fill="currentColor" />
+            </svg>
+            天津优合
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">核心技术</a></li>
+                <li><a href="#solutions">解决方案</a></li>
+                <li><a href="#news">新闻动态</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>赋能未来，智造无限</h1>
+            <p>天津优合网络科技有限公司 —— 您的专业人工智能解决方案合作伙伴</p>
+            <a href="#contact" class="btn">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="团队文化">
+        </div>
+        <div class="about-text">
+            <div class="section-title" style="text-align: left;">
+                <h2>关于天津优合</h2>
+                <div class="line" style="margin: 0;"></div>
+            </div>
+            <p>天津优合网络科技有限公司（简称“天津优合”）是一家致力于人工智能技术研发与应用的高科技企业。我们坐落于充满活力的天津市西青区，专注于为企业提供前沿的数字化转型方案。</p>
+            <br>
+            <p>我们的团队由一群充满激情的技术专家组成，深耕深度学习、大数据分析及智能自动化领域。我们的使命是通过创新的AI技术，帮助客户提升效率、降低成本，在激烈的市场竞争中保持领先地位。</p>
+            <br>
+            <p>我们秉持“合作、创新、卓越、共赢”的价值观，坚信技术的力量可以改变世界。我们致力于营造一个开放、包容的工作环境，鼓励每一位员工发挥创造力，共同成长。</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>核心技术与服务</h2>
+            <div class="line"></div>
+            <p style="margin-top: 1rem; color: #666;">我们提供全方位的AI技术支持，满足不同行业的业务需求</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>机器学习解决方案</h3>
+                <p>利用先进算法挖掘数据价值，构建预测模型，助力企业科学决策。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👁️</div>
+                <h3>计算机视觉</h3>
+                <p>图像识别、人脸识别、工业质检，让机器拥有“看”懂世界的能力。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>自然语言处理</h3>
+                <p>智能客服、舆情分析、文本挖掘，实现人机无障碍交互。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>大数据分析平台</h3>
+                <p>海量数据清洗、整合与可视化展示，洞察业务增长点。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="section-title">
+            <h2>行业解决方案</h2>
+            <div class="line"></div>
+            <p style="margin-top: 1rem; color: #666;">我们将AI技术与行业深度融合，提供定制化解决方案</p>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <img src="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=800&auto=format&fit=crop" alt="智慧金融">
+                <div class="solution-card-content">
+                    <h3>智慧金融</h3>
+                    <p>通过AI驱动的风险控制、智能投顾和反欺诈系统，提升金融服务效率与安全性。</p>
+                </div>
+            </div>
+            <div class="solution-card">
+                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=800&auto=format&fit=crop" alt="智能制造">
+                <div class="solution-card-content">
+                    <h3>智能制造</h3>
+                    <p>利用计算机视觉进行产品缺陷检测，通过预测性维护减少停机时间，优化生产流程。</p>
+                </div>
+            </div>
+            <div class="solution-card">
+                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop" alt="智慧零售">
+                <div class="solution-card-content">
+                    <h3>智慧零售</h3>
+                    <p>基于客户行为分析的智能推荐系统，优化库存管理，提升用户购物体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="section-title">
+            <h2>新闻动态</h2>
+            <div class="line"></div>
+        </div>
+        <div class="news-grid">
+            <div class="news-item">
+                <p class="date">2024年5月20日</p>
+                <h3>天津优合荣获“年度AI创新企业”奖</h3>
+                <p>凭借在计算机视觉领域的突破，我司获得业界高度认可。</p>
+                <a href="#">阅读更多 &rarr;</a>
+            </div>
+            <div class="news-item">
+                <p class="date">2024年4月15日</p>
+                <h3>公司发布全新大数据分析平台V2.0</h3>
+                <p>新版本在处理速度和可视化方面实现了重大升级。</p>
+                <a href="#">阅读更多 &rarr;</a>
+            </div>
+            <div class="news-item">
+                <p class="date">2024年3月1日</p>
+                <h3>我们与XX大学达成战略合作</h3>
+                <p>双方将共建人工智能联合实验室，推动产学研一体化。</p>
+                <a href="#">阅读更多 &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>联系我们</h2>
+            <div class="line"></div>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📍 公司地址</h3>
+                <p>天津市西青区中北镇<br>溪秀苑11号楼2门101</p>
+            </div>
+            <div class="contact-item">
+                <h3>📧 电子邮箱</h3>
+                <p><a href="mailto:dev@tjyouhenet.asia" style="color: white;">dev@tjyouhenet.asia</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>📞 联系电话</h3>
+                <p>15867870749</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 天津优合网络科技有限公司 版权所有</p>
+    </footer>
+
+</body>
+</html>
